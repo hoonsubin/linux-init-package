@@ -9,7 +9,6 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
 	else
 		MAKE_ME_ROOT=sudo
 	fi
-    $MAKE_ME_ROOT sed 's/# deb/deb/' -i /etc/apt/sources.list
     # update apt packages
     $MAKE_ME_ROOT apt update && $MAKE_ME_ROOT apt upgrade -y
     
@@ -42,7 +41,7 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
     else
         echo "This OS is not supported with this script."
         exit 1
-
+    fi
 fi
 
 # install yarn
@@ -76,5 +75,3 @@ else
     echo "This OS is not supported with this script."
     exit 1
 fi
-
-
