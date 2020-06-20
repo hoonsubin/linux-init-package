@@ -1,7 +1,10 @@
 #download list after a new Linux install (for ubuntu)
 
 sudo apt update && sudo apt upgrade -y;
-sudo apt install git curl libreoffice net-tools build-essential libssl-dev libffi-dev python3 python3-pip python3-dev python3-tk python3-setuptools python3-matplotlib python3-numpy python3-scipy;
+sudo add-apt-repository universe;
+sudo apt install git curl libreoffice net-tools build-essential libssl-dev libffi-dev chrome-gnome-shell gnome-tweak-tool;
+sudo apt install python3 python3-pip python3-dev python3-tk python3-setuptools python3-matplotlib python3-numpy python3-scipy;
+sudo apt install default-jdk default-jre wireshark gitg;
 
 # install dev tools from snap
 sudo snap install dotnet-sdk --classic;
