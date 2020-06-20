@@ -42,34 +42,33 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
         echo "This OS is not supported with this script."
         exit 1
     fi
-fi
 
-# install yarn
-curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | $MAKE_ME_ROOT apt-key add -
-echo "deb https://dl.yarnpkg.com/debian/ stable main" | $MAKE_ME_ROOT tee /etc/apt/sources.list.d/yarn.list
-$MAKE_ME_ROOT apt update && $MAKE_ME_ROOT apt install yarn
+    # install yarn
+    curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | $MAKE_ME_ROOT apt-key add -
+    echo "deb https://dl.yarnpkg.com/debian/ stable main" | $MAKE_ME_ROOT tee /etc/apt/sources.list.d/yarn.list
+    $MAKE_ME_ROOT apt update && $MAKE_ME_ROOT apt install yarn
 
-# install rust and substrate tools
-curl https://getsubstrate.io -sSf | bash -s --
-source ~/.cargo/env;
+    # install rust and substrate tools
+    curl https://getsubstrate.io -sSf | bash -s --
+    source ~/.cargo/env;
 
-# install nvm
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
-# This loads nvm
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+    # install nvm
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
+    # This loads nvm
+    export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
-nvm install node
+    nvm install node
 
-# install VS code extensions from list
-# path to the extension list
-input="$BASEDIR/vscode-extensions.txt"
+    # install VS code extensions from list
+    # path to the extension list
+    input="$BASEDIR/vscode-extensions.txt"
 
-# install all the extensions in the txt file
-while IFS= read -r line
-do
-    code --install-extension "$line"
-done < "$input"
+    # install all the extensions in the txt file
+    while IFS= read -r line
+    do
+        code --install-extension "$line"
+    done < "$input"
 
 else
     echo "This OS is not supported with this script."
