@@ -5,4 +5,4 @@
 
 1. clone this repository and open a terminal inside the folder
 2. `$ chmod +x init-install.sh`
-3. `$ sudo ./init-install.sh`
+3. `$ ./init-install.sh` (do not use `sudo` in this script, VS code doesn't like that)
