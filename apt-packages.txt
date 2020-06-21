@@ -17,6 +17,5 @@ python3-numpy
 python3-scipy
 default-jdk
 default-jre
-wireshark
 gitg
 apt-transport-https
