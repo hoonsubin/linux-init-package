@@ -20,7 +20,6 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
         cat "$BASEDIR/apt-packages.txt" | xargs $MAKE_ME_ROOT apt install -y
     
         # install dev tools from snap
-        $MAKE_ME_ROOT snap install dotnet-sdk --classic
         $MAKE_ME_ROOT snap install chromium
         $MAKE_ME_ROOT snap install pycharm-community --classic
         $MAKE_ME_ROOT snap install postman
