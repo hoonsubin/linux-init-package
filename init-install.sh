@@ -43,6 +43,13 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
         exit 1
     fi
 
+    # install .net core SDK
+    wget https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
+    $MAKE_ME_ROOT dpkg -i packages-microsoft-prod.deb
+    $MAKE_ME_ROOT apt-get update; \
+    $MAKE_ME_ROOT apt-get install -y apt-transport-https && \
+    $MAKE_ME_ROOT apt-get update && \
+    $MAKE_ME_ROOT apt-get install -y dotnet-sdk-3.1
     # install yarn
     curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | $MAKE_ME_ROOT apt-key add -
     echo "deb https://dl.yarnpkg.com/debian/ stable main" | $MAKE_ME_ROOT tee /etc/apt/sources.list.d/yarn.list
