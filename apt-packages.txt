@@ -19,3 +19,4 @@ default-jdk
 default-jre
 gitg
 apt-transport-https
+gparted

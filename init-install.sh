@@ -46,10 +46,10 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
     # install .net core SDK
     wget https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
     $MAKE_ME_ROOT dpkg -i packages-microsoft-prod.deb
-    $MAKE_ME_ROOT apt-get update; \
-    $MAKE_ME_ROOT apt-get install -y apt-transport-https && \
-    $MAKE_ME_ROOT apt-get update && \
-    $MAKE_ME_ROOT apt-get install -y dotnet-sdk-3.1
+    $MAKE_ME_ROOT apt update; \
+    $MAKE_ME_ROOT apt install -y apt-transport-https && \
+    $MAKE_ME_ROOT apt update && \
+    $MAKE_ME_ROOT apt install -y dotnet-sdk-3.1
     # install yarn
     curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | $MAKE_ME_ROOT apt-key add -
     echo "deb https://dl.yarnpkg.com/debian/ stable main" | $MAKE_ME_ROOT tee /etc/apt/sources.list.d/yarn.list
@@ -57,7 +57,13 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
 
     # install rust and substrate tools
     curl https://getsubstrate.io -sSf | bash -s --
-    source ~/.cargo/env;
+    source ~/.cargo/env
+
+    # install etcher
+    echo "deb https://deb.etcher.io stable etcher" | $MAKE_ME_ROOT tee /etc/apt/sources.list.d/balena-etcher.list
+    $MAKE_ME_ROOT apt-key adv --keyserver hkps://keyserver.ubuntu.com:443 --recv-keys 379CE192D401AB61
+    $MAKE_ME_ROOT apt update
+    $MAKE_ME_ROOT apt install balena-etcher-electron
 
     # install nvm
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
