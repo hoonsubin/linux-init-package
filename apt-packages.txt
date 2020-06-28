@@ -20,3 +20,8 @@ default-jre
 gitg
 apt-transport-https
 gparted
+cmake
+pkg-config
+gcc
+clang
+libclang-dev
