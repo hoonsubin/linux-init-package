@@ -1,5 +1,6 @@
 # linux-init-package
- a shell script that installs a set of developer tools for a new linux box
+A shell script that installs a set of developer tools for a new linux box.
+Currently it's optimized for Debian/Ubuntu and Kali-linux.
 
 ## How to install
 
