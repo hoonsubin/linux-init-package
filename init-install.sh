@@ -58,12 +58,6 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
     curl https://getsubstrate.io -sSf | bash -s --
     source ~/.cargo/env
 
-    # install etcher
-    echo "deb https://deb.etcher.io stable etcher" | $MAKE_ME_ROOT tee /etc/apt/sources.list.d/balena-etcher.list
-    $MAKE_ME_ROOT apt-key adv --keyserver hkps://keyserver.ubuntu.com:443 --recv-keys 379CE192D401AB61
-    $MAKE_ME_ROOT apt update
-    $MAKE_ME_ROOT apt install balena-etcher-electron -y
-
     # install nvm
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
     # This loads nvm
