@@ -24,6 +24,7 @@ gaborv.flatbuffers
 GitHub.vscode-pull-request-github
 humao.rest-client
 infosec-intern.yara
+JuanBlanco.solidity
 kleber-swf.unity-code-snippets
 ms-dotnettools.csharp
 ms-python.python
@@ -54,4 +55,3 @@ vscjava.vscode-java-dependency
 vscjava.vscode-java-pack
 vscjava.vscode-java-test
 vscjava.vscode-maven
-WallabyJs.quokka-vscode
