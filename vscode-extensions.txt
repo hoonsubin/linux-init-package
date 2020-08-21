@@ -2,11 +2,11 @@ aaron-bond.better-comments
 anseki.vscode-color
 austin.code-gnu-global
 bungcip.better-toml
+christian-kohler.npm-intellisense
 christian-kohler.path-intellisense
 CodeStream.codestream
 CoenraadS.bracket-pair-colorizer
 DavidAnson.vscode-markdownlint
-dbaeumer.jshint
 dbaeumer.vscode-eslint
 diegosarmentero.unity-dots-snippets
 donjayamanne.githistory
@@ -21,6 +21,7 @@ felipecaputo.git-project-manager
 formulahendry.auto-close-tag
 formulahendry.auto-rename-tag
 gaborv.flatbuffers
+geequlim.godot-tools
 GitHub.vscode-pull-request-github
 humao.rest-client
 infosec-intern.yara
@@ -40,6 +41,7 @@ mtxr.sqltools
 naumovs.color-highlight
 octref.vetur
 PKief.material-icon-theme
+qezhu.gitlink
 redhat.java
 redhat.vscode-yaml
 ritwickdey.live-sass
@@ -55,3 +57,4 @@ vscjava.vscode-java-dependency
 vscjava.vscode-java-pack
 vscjava.vscode-java-test
 vscjava.vscode-maven
+yzhang.markdown-all-in-one
