@@ -6,6 +6,7 @@ build-essential
 libssl-dev
 libffi-dev
 chrome-gnome-shell
+chromium-browser
 gnome-tweak-tool
 python3
 python3-pip

@@ -19,11 +19,8 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
         # install all the apt packages in the text file
         cat "$BASEDIR/apt-packages.txt" | xargs $MAKE_ME_ROOT apt install -y
     
-        # install dev tools from snap
-        $MAKE_ME_ROOT snap install chromium
-        $MAKE_ME_ROOT snap install pycharm-community --classic
-        $MAKE_ME_ROOT snap install postman
-        $MAKE_ME_ROOT snap install code --classic
+        # install all snap packages in the text file
+        cat "$BASEDIR/snap-packages.txt" | xargs $MAKE_ME_ROOT snap install
 
     elif cat /etc/*-release | grep "Kali GNU" > /dev/null ; then
         echo "installing for Kali."
@@ -42,11 +39,10 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
         exit 1
     fi
 
-    # install .net core SDK
+    # install .net core SDK from MS
     wget https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
     $MAKE_ME_ROOT dpkg -i packages-microsoft-prod.deb
     $MAKE_ME_ROOT apt update; \
-    $MAKE_ME_ROOT apt install -y apt-transport-https && \
     $MAKE_ME_ROOT apt update && \
     $MAKE_ME_ROOT apt install -y dotnet-sdk-3.1
     # install yarn
